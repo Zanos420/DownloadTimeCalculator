@@ -1,7 +1,22 @@
 package downloadtimecalculator;
 
+import ui.MenuForm;
+
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println("Hello World!");
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch(Exception e){
+            System.err.println(e.getLocalizedMessage());
+            e.printStackTrace();
+        }
+        SwingUtilities.invokeLater(MenuForm::new);
     }
 }

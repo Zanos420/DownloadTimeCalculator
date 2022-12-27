@@ -1,0 +1,11 @@
+package downloadtimecalculator;
+
+public enum SpeedUnit {
+    GIGABYTES_PER_SECOND,
+    GIBIBYTES_PER_SECOND,
+    MEGABYTES_PER_SECOND,
+    MEBIBYTES_PER_SECOND,
+    KILOBYTES_PER_SECOND,
+    KIBIBYTES_PER_SECOND,
+    BYTES_PER_SECOND
+}
