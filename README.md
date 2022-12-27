@@ -2,7 +2,7 @@
 calculate remaining download time for your favourite movies, games, ...
 
 # Requirements:
-- gradle
+- gradle (only if u dont use gradle wrapper)
 - java 17
 
 # Compile and Run
