@@ -6,5 +6,8 @@ calculate remaining download time for your favourite movies, games, ...
 - java 17
 
 # Compile and Run
-- `./gradlew (run|build)`
-- jar only: `./gradlew jar & java -jar <path to jar>`
+from root directory:
+- using gradle wrapper: `./gradlew run`
+- jar:
+  - compile: `./gradlew build`
+  - run: `java -jar <path to jar>` (usually app/build/libs/<jarname>)

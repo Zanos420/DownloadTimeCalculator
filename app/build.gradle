@@ -34,9 +34,15 @@ group 'neffe.von.philipp'
 version '1.0'
 
 tasks.named('jar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveBaseName.set("downloadtimecalculator")
     manifest {
         attributes('Implementation-Title': project.name,
                 'Implementation-Version': project.version,
                 'Main-Class' : application.mainClass)
+    }
+    //fat jar with dependencies
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
