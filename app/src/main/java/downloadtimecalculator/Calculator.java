@@ -64,28 +64,63 @@ public class Calculator {
         int remainingDownloadTime = (int) Math.ceil(calculateRemainingDownloadSeconds());
         if(!modulo){
             return   remainingDownloadTime + "s";
-        }else{
-            int days = remainingDownloadTime / 86400; // a day has 60^2 * 24 seconds
-            remainingDownloadTime %= 86400;
-            int hours = remainingDownloadTime / 3600;
-            remainingDownloadTime %= 3600;
-            int minutes = remainingDownloadTime / 60;
-            remainingDownloadTime %= 60;
-            int seconds = remainingDownloadTime;
-
-            if(days > 0){
-                return days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-            }
-
-            if(hours > 0){
-                return hours + "h " + minutes + "m " + seconds + "s";
-            }
-
-            if(minutes > 0){
-                return minutes + "m " + seconds + "s";
-            }
-
-            return remainingDownloadTime + "s";
         }
+        return secondsToModulo(remainingDownloadTime);
+    }
+
+    /**
+     * pretty printing the seconds to modulo '[<days>d] [<hours>h] [<minutes>m] <seconds>s'
+     * @param remainingDownloadTime seconds of download time left
+     * @return modulo string
+     */
+    public static String secondsToModulo(int remainingDownloadTime){
+        int days = remainingDownloadTime / 86400; // a day has 60^2 * 24 seconds
+        remainingDownloadTime %= 86400;
+        int hours = remainingDownloadTime / 3600;
+        remainingDownloadTime %= 3600;
+        int minutes = remainingDownloadTime / 60;
+        remainingDownloadTime %= 60;
+        int seconds = remainingDownloadTime;
+
+        if(days > 0){
+            return days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        if(hours > 0){
+            return hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        if(minutes > 0){
+            return minutes + "m " + seconds + "s";
+        }
+
+        return remainingDownloadTime + "s";
+    }
+
+    /**
+     * converts a modulo time format '[<days>d] [<hours>h] [<minutes>m] <seconds>s' to seconds
+     * @param modulo modulo string
+     * @return seconds
+     */
+    public static int moduloToSeconds(String modulo){
+        String[] timeFormat = modulo.split(" ");
+        int days = 0,hours = 0,minutes = 0,seconds = 0;
+        if(timeFormat.length == 4){
+            days = Integer.parseInt(timeFormat[0].substring(0,timeFormat[0].length() - 1));
+            hours = Integer.parseInt(timeFormat[1].substring(0,timeFormat[1].length() - 1));
+            minutes = Integer.parseInt(timeFormat[2].substring(0,timeFormat[2].length() - 1));
+            seconds = Integer.parseInt(timeFormat[3].substring(0,timeFormat[3].length() - 1));
+        }else if(timeFormat.length == 3){
+            hours = Integer.parseInt(timeFormat[0].substring(0,timeFormat[0].length() - 1));
+            minutes = Integer.parseInt(timeFormat[1].substring(0,timeFormat[1].length() - 1));
+            seconds = Integer.parseInt(timeFormat[2].substring(0,timeFormat[2].length() - 1));
+        } else if(timeFormat.length == 2){
+            minutes = Integer.parseInt(timeFormat[0].substring(0,timeFormat[0].length() - 1));
+            seconds = Integer.parseInt(timeFormat[1].substring(0,timeFormat[1].length() - 1));
+        }else{
+            seconds = Integer.parseInt(timeFormat[0].substring(0,timeFormat[0].length() - 1));
+        }
+
+        return days * 86400 + hours * 3600 + minutes * 60 + seconds;
     }
 }

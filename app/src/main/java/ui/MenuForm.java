@@ -1,5 +1,8 @@
 package ui;
 
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
 import downloadtimecalculator.Calculator;
 import downloadtimecalculator.SizeUnit;
 import downloadtimecalculator.SpeedUnit;
@@ -23,6 +26,7 @@ public class MenuForm extends JFrame {
     private JPanel menuPanel;
     private JComboBox SizeComboBox;
     private JComboBox SpeedComboBox;
+    private JCheckBox moduloCheckBox;
 
 
     {
@@ -41,34 +45,37 @@ public class MenuForm extends JFrame {
      */
     private void $$$setupUI$$$() {
         menuPanel = new JPanel();
-        menuPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(6, 5, new Insets(0, 0, 0, 0), -1, -1));
+        menuPanel.setLayout(new GridLayoutManager(6, 5, new Insets(0, 0, 0, 0), -1, -1));
         fileSizeLabel = new JLabel();
         fileSizeLabel.setText("File Size:");
-        menuPanel.add(fileSizeLabel, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(fileSizeLabel, new GridConstraints(0, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         downloadSpeedLabel = new JLabel();
         downloadSpeedLabel.setText("Download Speed:");
-        menuPanel.add(downloadSpeedLabel, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(downloadSpeedLabel, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         downloadTimeLabel = new JLabel();
         downloadTimeLabel.setText("Download Time:");
-        menuPanel.add(downloadTimeLabel, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(downloadTimeLabel, new GridConstraints(3, 0, 1, 4, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         CalcButton = new JButton();
         CalcButton.setText("Calc");
-        menuPanel.add(CalcButton, new com.intellij.uiDesigner.core.GridConstraints(5, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        menuPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-        menuPanel.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        menuPanel.add(CalcButton, new GridConstraints(5, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer1 = new Spacer();
+        menuPanel.add(spacer1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final Spacer spacer2 = new Spacer();
+        menuPanel.add(spacer2, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         FileSizeText = new JTextField();
-        menuPanel.add(FileSizeText, new com.intellij.uiDesigner.core.GridConstraints(0, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        menuPanel.add(FileSizeText, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         downloadSpeedText = new JTextField();
-        menuPanel.add(downloadSpeedText, new com.intellij.uiDesigner.core.GridConstraints(1, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        menuPanel.add(downloadSpeedText, new GridConstraints(1, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         SizeComboBox = new JComboBox();
-        menuPanel.add(SizeComboBox, new com.intellij.uiDesigner.core.GridConstraints(0, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(SizeComboBox, new GridConstraints(0, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         SpeedComboBox = new JComboBox();
-        menuPanel.add(SpeedComboBox, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(SpeedComboBox, new GridConstraints(1, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         ExitButton = new JButton();
         ExitButton.setText("Exit");
-        menuPanel.add(ExitButton, new com.intellij.uiDesigner.core.GridConstraints(5, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        menuPanel.add(ExitButton, new GridConstraints(5, 3, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        moduloCheckBox = new JCheckBox();
+        moduloCheckBox.setText("Modulo");
+        menuPanel.add(moduloCheckBox, new GridConstraints(3, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -93,7 +100,7 @@ public class MenuForm extends JFrame {
         this.setLocationRelativeTo(null); // center
 
 
-        this.CalcButton.addActionListener(new ExitButtonAction());
+        this.CalcButton.addActionListener(new CalcButtonAction());
         this.ExitButton.addActionListener(e -> System.exit(0));
 
         // init drop down menus
@@ -105,11 +112,15 @@ public class MenuForm extends JFrame {
             this.SpeedComboBox.addItem(speedOption);
         }
 
+        // set modulo check box to default true
+        this.moduloCheckBox.setSelected(true);
+        this.moduloCheckBox.addActionListener(new ModuloCheckBoxAction());
+
         this.pack();
         this.setVisible(true);
     }
 
-    class ExitButtonAction implements ActionListener {
+    class CalcButtonAction implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -137,7 +148,7 @@ public class MenuForm extends JFrame {
                 }
                 // calculating download speed
                 Calculator calc = new Calculator(sizeUnit, speedUnit, fileSize, downloadSpeed);
-                String downloadTimeRemaining = calc.getRemainingDownloadTime(true);
+                String downloadTimeRemaining = calc.getRemainingDownloadTime(MenuForm.this.moduloCheckBox.isSelected());
 
                 //update GUI on EDT
                 SwingUtilities.invokeLater(new Runnable() {
@@ -145,6 +156,43 @@ public class MenuForm extends JFrame {
                         downloadTimeLabel.setText("<html>Download Time: <b>" + downloadTimeRemaining + "</b></html>");
                     }
                 });
+
+            }).start();
+        }
+    }
+
+    class ModuloCheckBoxAction implements ActionListener {
+
+        // changes the download time label if it was already calculated
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new Thread(() -> {
+                //test if downloadtime was calculated already as we dont want to recalculate for performance reasons
+                String downloadTimeLabelText = downloadTimeLabel.getText();
+                if (downloadTimeLabelText.endsWith(":")) {
+                    // not calculated yet so we do nothing
+                    return;
+                }
+                // we have to strip away html stuff
+                String downloadTime =
+                        downloadTimeLabelText.substring(downloadTimeLabelText.indexOf("<b>") + 3, downloadTimeLabelText.indexOf("</b>", downloadTimeLabelText.indexOf("<b>") + 3));
+
+                // we have to either convert seconds -> modulo or modulo -> seconds
+                if (!moduloCheckBox.isSelected()) {
+                    // download time is modulo
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            downloadTimeLabel.setText("<html>Download Time: <b>" + Calculator.moduloToSeconds(downloadTime) + "s" + "</b></html>");
+                        }
+                    });
+                } else {
+                    int seconds = Integer.parseInt(downloadTime.substring(0, downloadTime.length() - 1));
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            downloadTimeLabel.setText("<html>Download Time: <b>" + Calculator.secondsToModulo(seconds) + "</b></html>");
+                        }
+                    });
+                }
 
             }).start();
         }

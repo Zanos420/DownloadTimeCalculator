@@ -26,7 +26,7 @@
       </component>
       <component id="9d991" class="javax.swing.JLabel" binding="downloadTimeLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Download Time:"/>
@@ -84,6 +84,14 @@
         </constraints>
         <properties>
           <text value="Exit"/>
+        </properties>
+      </component>
+      <component id="665cd" class="javax.swing.JCheckBox" binding="moduloCheckBox">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Modulo"/>
         </properties>
       </component>
     </children>
